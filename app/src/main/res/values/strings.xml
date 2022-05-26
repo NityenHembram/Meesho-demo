@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Meesho Demo</string>
+    <string name="user_name">Nityen Hembram</string>
+    <string name="menu_item_favorite">fevorite</string>
+    <string name="menu_item_notification">notification</string>
+    <string name="menu_item_cart">cart</string>
+    <string name="btm_title_account">account</string>
+    <string name="btm_title_community">Community</string>
+    <string name="btm_title_home">Home</string>
+    <string name="btm_title_category">Category</string>
+    <string name="btm_title_order">My Orders</string>
+    <string name="item_category_name">Categories</string>
+    <string name="item_product_name">Shirt</string>
+    <string name="item_produce_price">price 1100</string>
+    <string name="item_delivery_type">Free delivery</string>
+    <string name="item_product_rating">4.3</string>
+</resources>
