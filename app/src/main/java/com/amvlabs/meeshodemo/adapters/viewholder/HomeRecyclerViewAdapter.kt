@@ -37,7 +37,8 @@ class HomeRecyclerViewAdapter : RecyclerView.Adapter<HomeRecyclerViewHolder>() {
     override fun getItemViewType(position: Int): Int {
         return when (items[position]) {
              is HomeRecyclerViewItems.LayoutItems -> R.layout.item_base_layout
-//            is HomeRecyclerViewItems.ViewPagerLayoutItem ->
+//
+            else -> { 0 }
         }
     }
 
