@@ -38,7 +38,7 @@ class MyViewModel(application: Application):AndroidViewModel(application) {
             listOfProductData.add(p)
             prod.add(ChildRecyclerViewItems.Products(listOfProductData,spanSize.toString(),title.toString()))
         }
-        allItems.add(HomeRecyclerViewItems.LayoutItems(spanSize.toString(),title.toString(),prod))
+        allItems.add(HomeRecyclerViewItems.ProductItemsLayout(spanSize.toString(),title.toString(),prod))
         _homeListItems.value = allItems
 
     }
@@ -79,7 +79,7 @@ class MyViewModel(application: Application):AndroidViewModel(application) {
             listOfOffers.add(o)
             offers.add(ChildRecyclerViewItems.Offers(listOfOffers,spanSize.toString(),title.toString(),))
         }
-        allItems.add(HomeRecyclerViewItems.LayoutItems(spanSize.toString(),title.toString(),offers))
+        allItems.add(HomeRecyclerViewItems.ViewPagerLayoutItem(spanSize.toString(),title.toString(),offers))
         _homeListItems.value = allItems
     }
 
