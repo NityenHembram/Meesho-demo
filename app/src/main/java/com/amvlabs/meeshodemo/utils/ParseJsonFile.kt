@@ -8,6 +8,8 @@ import java.nio.charset.CharsetEncoder
 
 class ParseJsonFile {
     fun loadProducts(ctx:Context):String?{
+        val a:String = ""
+        a.reversed()
         return try {
             val inputStream = ctx.assets.open("products.json")
             val size = inputStream.available()

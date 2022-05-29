@@ -6,7 +6,11 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupWithNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.amvlabs.meeshodemo.adapters.viewholder.HomeRecyclerViewAdapter
@@ -19,39 +23,22 @@ import org.json.JSONObject
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding:ActivityMainBinding
-    var homeRecyclerViewAdapter  = HomeRecyclerViewAdapter()
-    lateinit var viewModel:MyViewModel
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        viewModel = ViewModelProvider(this,ViewModelProvider.AndroidViewModelFactory(application))[MyViewModel::class.java]
+
 
         val action = setSupportActionBar(binding.includedToolbar.toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
-        binding.btmNav.selectedItemId = R.id.item_home
 
-      viewModel.getAllItems()
-
-
-
-
-        viewModel.homeListItems.observe(this){
-           it.forEach{h ->
-               val a = h as HomeRecyclerViewItems.Products
-               a.products.forEach{p ->
-                   Log.d("TAG", "onCreate: ${p.title}")
-               }
-           }
-            homeRecyclerViewAdapter.items = it
-        }
-
-        binding.mainRecyclerView.apply {
-            layoutManager = LinearLayoutManager(this@MainActivity)
-            adapter = homeRecyclerViewAdapter
-        }
-
-
+        val btmNavigationView = binding.btmNav
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
+        val navController = navHostFragment.navController
+        btmNavigationView.setupWithNavController(navController)
+        btmNavigationView.selectedItemId = R.id.homeFragment2
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -60,6 +47,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.item_menu_fav ->    Toast.makeText(this,"Favorite",Toast.LENGTH_LONG).show()
+            R.id.item_menu_notif ->  Toast.makeText(this,"Notification",Toast.LENGTH_LONG).show()
+            R.id.item_menu_cart ->   Toast.makeText(this,"Cart",Toast.LENGTH_LONG).show()
+        }
         return super.onOptionsItemSelected(item)
     }
 }

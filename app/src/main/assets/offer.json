@@ -1,15 +1,15 @@
 {
     "spansize": "1",
-    "title": "offer",
+    "title": "Offers",
     "offers": [
         {
-            "image": "https://www.industrialempathy.com/img/remote/ZiClJf-640w.avif"
+            "image": "https://images.meesho.com/images/marketing/1653635915603.jpg"
         },
         {
-            "image": "https://www.industrialempathy.com/img/remote/ZiClJf-640w.avif"
+            "image": "https://images.meesho.com/images/pow/download_banner_desktop.webp"
         },
         {
-            "image": "https://www.industrialempathy.com/img/remote/ZiClJf-640w.avif"
+            "image": "https://images.meesho.com/images/marketing/1653636684933.jpg"
         }
     ]
 }

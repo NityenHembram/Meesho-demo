@@ -12,6 +12,8 @@
     <string name="item_category_name">Categories</string>
     <string name="item_product_name">Shirt</string>
     <string name="item_produce_price">price 1100</string>
-    <string name="item_delivery_type">Free delivery</string>
+    <string name="item_product_description">Free delivery</string>
     <string name="item_product_rating">4.3</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
